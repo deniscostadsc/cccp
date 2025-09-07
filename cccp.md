@@ -85,8 +85,132 @@ for line in sys.stdin:
     a, b = map(int, line.split())
     print(a + b)
 ```
+## Tipos básicos
 
-## Entradas e saídas
+## Entrada
+
+Existem algums padrões de arquivos de entrada e você deve saber de cor como ler
+todos esse diferentes formatos.
+
+### N + N-linhas
+
+```
+5
+3 4
+2 4
+1 2
+5 6
+4 1
+```
+
+#### C++
+
+```c++
+#include <iostream>
+#include <cstdint>
+
+int main() {
+    std::ios_base::sync_with_stdio(false);
+    std::cin.tie(0);
+
+    int16_t n, a, b;
+    std::cin >> n;
+
+    for (int16_t i = 0; i < n; i++) {
+        std::cin >> a + b;
+    }
+
+    return 0;
+}
+```
+
+#### Python
+
+```python
+n = int(input())
+
+for _ in range(n):
+    a, b = map(int, input().split())
+```
+
+### Número indefinido de linhas
+
+```
+3 4
+2 4
+1 2
+5 6
+4 1
+```
+
+#### C++
+
+```c++
+#include <iostream>
+#include <cstdint>
+
+int main() {
+    std::ios_base::sync_with_stdio(false);
+    std::cin.tie(0);
+
+    int16_t a, b;
+
+    while (std::cin >> a + b) {
+
+    }
+
+    return 0;
+}
+```
+
+#### Python
+
+```python
+import sys
+
+for line in sys.stdin:
+    a, b = map(int, line.split())
+```
+
+### Linha final zero
+
+```
+3 4
+2 4
+1 2
+5 6
+4 1
+0 0
+```
+
+```c++
+#include <iostream>
+#include <cstdint>
+
+int main() {
+    std::ios_base::sync_with_stdio(false);
+    std::cin.tie(0);
+
+    int16_t a, b;
+
+    while (std::cin >> a + b && a != 0 && b != 0) {
+
+    }
+
+    return 0;
+}
+```
+
+```python
+import sys
+
+for line in sys.stdin:
+    a, b = map(int, line.split())
+    if not a and not b:
+        break
+```
+
+## Saída
 
 ## Complexidade de espaço e tempo
 
@@ -116,7 +240,7 @@ organização do código, e evitar problemas, crie a seguinte estrutura de pasta
 
 Para isso basta digitar o seguinte comando no terminal (Linux):
 
-```
+```shell
 mkdir -p maratona/templates maratona/problemas/{A..K}/ maratona/aquecimento
 ```
 
@@ -145,6 +269,36 @@ eles sejam copiados para a resolução de cada problema.
 
 E dentro de cada pasta respectiva, você adicionará os arquivos específicos para
 cada problema.
+
+### Arquivos de entrada e saída
+
+Quando for resolver um problema, nÃo digite a entrada do problema manualmente no terminal, caso não resolva o problema de primeira você vai precisar fazer isso várias vezes e isso custará tempo. Salva a entrada e a saída esperada em arquivos:
+
+```
+$ tree maratona/
+maratona/
+    aquecimento
+    problemas/
+        A/
+            a.cpp
+            entrada.txt
+            saida.txt
+```
+
+e execute da seguinte forma:
+
+```shell
+g++ -std=c++20 -O2 -lm a.cpp
+./a.o < entrada.txt > resultado.txt
+```
+
+Para identificar possível diferenças no resultado use a ferramenta `diff`:
+
+```shell
+diff resultado.txt saída.txt
+```
+
+## Problemas comuns
 
 ## Apêndice
 
