@@ -1,20 +1,3 @@
----
-title: "Cartilha de Combate para Competições de Programação"
-author: "Denis Costa"
-subject: "Um guia completo para competições de programação"
-keywords: [programação competitiva, competições de programação, algoritmos, estrutura de dados]
-geometry: "left=1.5cm, right=1.5cm, top=2cm, bottom=2cm"
-fontsize: 10pt
-mainfont: "Latin Modern Roman"
-monofont: "Latin Modern Mono"
-urlcolor: blue
-linkcolor: blue
-toc: true
-numbersections: true
----
-
-\pagebreak
-
 # Cartilha de Combate para Competições de Programação
 
 ## Sobre a cartilha
@@ -34,9 +17,8 @@ Programmer’s Handbook][1].
 ### Objetivo desta cartilha
 
 Esta cartilha se proprões a ser uma referência rápido para consulta e uma forma
-de reuniar dicas para evitar erros em competições de programação.
-
-Não espere uma referência técnica aprofundada.
+de reuniar dicas para evitar erros em competições de programação. Não espere uma
+referência técnica aprofundada.
 
 ### Como usar a cartilha
 
@@ -272,7 +254,10 @@ cada problema.
 
 ### Arquivos de entrada e saída
 
-Quando for resolver um problema, nÃo digite a entrada do problema manualmente no terminal, caso não resolva o problema de primeira você vai precisar fazer isso várias vezes e isso custará tempo. Salva a entrada e a saída esperada em arquivos:
+Quando for resolver um problema, não digite a entrada do problema manualmente no
+terminal, caso não resolva o problema de primeira você vai precisar fazer isso
+várias vezes e isso custará tempo. Salva a entrada e a saída esperada em
+arquivos:
 
 ```
 $ tree maratona/
@@ -299,6 +284,44 @@ diff resultado.txt saída.txt
 ```
 
 ## Problemas comuns
+
+### verificar se um número é primo
+#### C++
+
+```c++
+bool is_prime(std::int32_t n) {
+    if (n == 2) {
+        return true;
+    }
+    if (n % 2 == 0 || n < 2) {
+        return false;
+    }
+
+    for (std::int32_t i = 3; i <= sqrt(n); i += 2) {
+        if (n % i == 0) {
+            return false;
+        }
+    }
+    return true;
+}
+````
+
+#### Python
+
+```python
+def is_prime(n):
+    if n == 2:
+        return True
+
+    if n % 2 == 0 or n < 2:
+        return False
+
+    for i in range(3, int(math.sqrt(n)) + 1, 2):
+        if n % i == 0:
+            return False
+
+    return True
+```
 
 ## Apêndice
 
