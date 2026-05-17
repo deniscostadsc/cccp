@@ -21,6 +21,14 @@ referência técnica aprofundada.
 
 ## Como usar a cartilha
 
+Para gerar o pdf, execute o comando:
+
+```
+make pdf
+```
+
+*:exclamation: este comando requer docker instalado.*
+
 É recomendado que se imprima o pdf gerado e leva-o para a competição.
 
 ## Qual linguagem usar?
