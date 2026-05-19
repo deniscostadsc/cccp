@@ -305,10 +305,57 @@ print(f'{a.2f}'). # imprime duas casas decimais
 
 ## Estruturas de Dados
 
-## Algoritmos comuns
+## Algoritmos
 
 ### Matemática
-#### verificar se um número é primo
+
+#### Máximo divisor comum (MDC)
+
+##### C++
+
+```c++
+std::int16_t mmc(std::int16_t a, std::int16_t b) {
+    std::int16_t x;
+
+    while (b > 0) {
+        x = b;
+        b = a % b;
+        a = x;
+    }
+
+    return a;
+}
+```
+
+##### Python
+
+```python
+def mdc(a, b):
+    while b > 0:
+        a, b = b, a % b
+
+    return a
+```
+
+#### Mínimo múltiplo comum (MMC)
+
+##### C++
+
+```c++
+std::int64_t mmc(std::int64_t x, std::int64_t y) {
+    return abs(x) / gcd(x, y) * abs(y);
+}
+```
+
+##### Python
+
+```python
+def mmc(x, y):
+    return abs(x) // mdc(x, y) * abs(y)
+```
+
+#### Número primo
+
 ##### C++
 
 ```c++
@@ -327,7 +374,7 @@ bool is_prime(std::int32_t n) {
     }
     return true;
 }
-````
+```
 
 ##### Python
 
@@ -346,6 +393,4 @@ def is_prime(n):
     return True
 ```
 
-
 ## Estratégia de resolução de problemas
-
