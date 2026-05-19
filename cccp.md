@@ -117,7 +117,7 @@ while line := input().strip():
     output(f'{a + b}')
 ```
 
-## Tipos básicos
+## Tipos
 
 ### C++
 
@@ -146,7 +146,7 @@ int main(){
 }
 ```
 
-## Entradas mais comuns
+## Entradas
 
 ### N + N-linhas
 
@@ -173,7 +173,7 @@ int main() {
     std::cin >> n;
 
     for (int16_t i = 0; i < n; i++) {
-        std::cin >> a + b;
+        std::cin >> a >> b;
     }
 
     return 0;
@@ -215,7 +215,7 @@ int main() {
 
     int16_t a, b;
 
-    while (std::cin >> a + b) {
+    while (std::cin >> a >> b) {
 
     }
 
@@ -232,7 +232,7 @@ for line in sys.stdin:
     a, b = map(int, line.split())
 ```
 
-### Linha final zero
+### Zero no final
 
 ```
 3 4
@@ -275,6 +275,19 @@ for line in sys.stdin:
 ```
 
 ## Saída
+
+### Formatação de ponto flutuante
+
+#### C++
+
+```c++
+std::cout <<
+```
+
+#### Python
+```python
+print(f'{a.2f}'). # imprime duas casas decimais
+```
 
 ## Complexidade de espaço e tempo
 
