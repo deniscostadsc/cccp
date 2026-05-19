@@ -6,7 +6,7 @@ clean:
 	@rm -rf cccp.pdf
 
 pdf: clean
-	docker run \
+	@docker run \
 		--platform linux/amd64 \
 		--rm \
 		-v ${PWD}:/data \
