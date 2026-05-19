@@ -15,5 +15,5 @@ pdf: clean
 		-V geometry:"margin=0.75in" \
 		-V classoption:twocolumn \
 		-V classoption:landscape \
-		-H fix.tex \
+		-H settings.tex \
 		--toc
