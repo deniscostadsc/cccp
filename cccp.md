@@ -1,7 +1,5 @@
 ---
 title: "Cartilha de Combate para Competições de Programação"
-toc: true
-toc-own-page: true
 ---
 
 # Cartilha de Combate para Competições de Programação
@@ -19,7 +17,10 @@ https://github.com/deniscostadsc/cccp/.
 Digitar o seguinte comando no terminal (Linux):
 
 ```shell
-mkdir -p maratona/templates maratona/problemas/{A..K}/ maratona/aquecimento
+mkdir -p \
+    maratona/templates \
+    maratona/problemas/{A..K}/ \
+    maratona/aquecimento
 ```
 
 Após esse comado, você terá a seguinte estrutura de pastas no seu computador:
