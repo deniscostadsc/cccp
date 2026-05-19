@@ -15,5 +15,6 @@ pdf: clean
 		-V geometry:"margin=0.75in" \
 		-V classoption:twocolumn \
 		-V classoption:landscape \
+		-V date="$(shell date '+%d/%m/%Y')" \
 		-H settings.tex \
 		--toc
