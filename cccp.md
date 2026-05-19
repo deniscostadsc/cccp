@@ -12,6 +12,78 @@ A Cartilha de Combate para Competições de Programação, ou CCCP, é mantida n
 Github de maneira aberta e colaborativa. Para mais informações acesse:
 https://github.com/deniscostadsc/cccp/.
 
+## No dia da competição
+
+### Estrutura das pastas
+
+Digitar o seguinte comando no terminal (Linux):
+
+```shell
+mkdir -p maratona/templates maratona/problemas/{A..K}/ maratona/aquecimento
+```
+
+Após esse comado, você terá a seguinte estrutura de pastas no seu computador:
+
+```
+maratona/
+    aquecimento/
+    problemas/
+         A/
+         B/
+         C/
+         D/
+         E/
+         F/
+         G/
+         H/
+         I/
+         J/
+         K/
+    templates/
+```
+
+Na pasta de templates, já deixe escrito os templates de C++ e Python, pra que
+eles sejam copiados para a resolução de cada problema.
+
+### Arquivos de entrada e saída
+
+Quando for resolver um problema, não digite a entrada do problema manualmente no
+terminal, caso não resolva o problema de primeira você vai precisar fazer isso
+várias vezes e isso custará tempo. Salva a entrada e a saída esperada em
+arquivos:
+
+```
+$ tree maratona/
+maratona/
+    aquecimento
+    problemas/
+        A/
+            a.cpp
+            entrada.txt
+            saida.txt
+```
+
+e execute da seguinte forma para C++:
+
+```shell
+g++ -std=c++20 -O2 -lm a.cpp
+./a.o < entrada.txt > resultado.txt
+```
+
+E para Python:
+
+```shell
+python a.py < entrada.txt > resultado.txt
+```
+
+Para identificar possível diferenças no resultado use a ferramenta `diff`:
+
+```shell
+diff resultado.txt saída.txt
+```
+
+## Templates
+
 ### Template C++
 
 ```cpp
@@ -44,6 +116,7 @@ while line := input().strip():
     a, b = map(int, line.split())
     output(f'{a + b}')
 ```
+
 ## Tipos básicos
 
 ### C++
@@ -170,6 +243,8 @@ for line in sys.stdin:
 0 0
 ```
 
+#### C++
+
 ```c++
 #include <iostream>
 #include <cstdint>
@@ -187,6 +262,8 @@ int main() {
     return 0;
 }
 ```
+
+#### Python
 
 ```python
 import sys
@@ -258,72 +335,3 @@ def is_prime(n):
 
 ## Estratégia de resolução de problemas
 
-## No dia da competição
-
-### Estrutura das pastas
-
-Digitar o seguinte comando no terminal (Linux):
-
-```shell
-mkdir -p maratona/templates maratona/problemas/{A..K}/ maratona/aquecimento
-```
-
-Após esse comado, você terá a seguinte estrutura de pastas no seu computador:
-
-```
-maratona/
-    aquecimento/
-    problemas/
-         A/
-         B/
-         C/
-         D/
-         E/
-         F/
-         G/
-         H/
-         I/
-         J/
-         K/
-    templates/
-```
-
-Na pasta de templates, já deixe escrito os templates de C++ e Python, pra que
-eles sejam copiados para a resolução de cada problema.
-
-### Arquivos de entrada e saída
-
-Quando for resolver um problema, não digite a entrada do problema manualmente no
-terminal, caso não resolva o problema de primeira você vai precisar fazer isso
-várias vezes e isso custará tempo. Salva a entrada e a saída esperada em
-arquivos:
-
-```
-$ tree maratona/
-maratona/
-    aquecimento
-    problemas/
-        A/
-            a.cpp
-            entrada.txt
-            saida.txt
-```
-
-e execute da seguinte forma para C++:
-
-```shell
-g++ -std=c++20 -O2 -lm a.cpp
-./a.o < entrada.txt > resultado.txt
-```
-
-E para Python:
-
-```shell
-python a.py < entrada.txt > resultado.txt
-```
-
-Para identificar possível diferenças no resultado use a ferramenta `diff`:
-
-```shell
-diff resultado.txt saída.txt
-```
