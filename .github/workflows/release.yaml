@@ -1,0 +1,34 @@
+---
+name: Gerar PDF e Criar Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Generate pdf
+        run: make pdf
+
+      - name: Create release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: cccp.pdf
+          tag_name: ${{ github.ref_name }}
+          name: Release ${{ github.ref_name }}
+          body: |
+            PDF gerado automaticamente em $(date '+%d/%m/%Y')
+          draft: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
