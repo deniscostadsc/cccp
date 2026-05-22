@@ -286,7 +286,19 @@ for line in sys.stdin:
 #### C++
 
 ```c++
-std::cout <<
+#include <iostream>
+#include <iomanip>
+
+int main() {
+    std::ios_base::sync_with_stdio(false);
+    std::cin.tie(0);
+
+    float pi = 3.1514;
+
+    std::cout << std::fixed << std::setprecision(2) << pi;
+
+    return 0;
+}
 ```
 
 #### Python
