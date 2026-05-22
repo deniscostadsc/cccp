@@ -13,6 +13,9 @@ A ideia não é, e nunca será ser um guia completa para aprendizado de programa
 necessária para essas competições. Para isso recomendo o [Competitive
 Programmer’s Handbook](https://www.cses.fi/book/index.php).
 
+Algns trechos foram baseados, as vezes são uma tradução direta, no
+[kactl](https://github.com/kth-competitive-programming/kactl).
+
 ## Objetivo desta cartilha
 
 Esta cartilha se proprõe a ser uma referência rápido para consulta e uma forma

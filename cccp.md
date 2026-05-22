@@ -393,4 +393,57 @@ def is_prime(n):
     return True
 ```
 
-## Estratégia de resolução de problemas
+## Roteiro de depuração
+
+### Pré-submissão:
+- Escreva alguns casos de teste simples se a amostra não for suficiente.
+- Os limites de tempo são apertados? Se sim, gere casos máximos.
+- O uso de memória está ok?
+- Algo pode estourar (overflow)?
+- Certifique-se de enviar o arquivo correto.
+
+### Resposta errada:
+- Imprima sua solução! Imprima também saídas de depuração.
+- Você está limpando todas as estruturas de dados entre os casos de teste?
+- Seu algoritmo consegue lidar com toda a faixa de entrada?
+- Leia o enunciado completo do problema novamente.
+- Você lidou corretamente com todos os casos extremos?
+- Você entendeu o problema corretamente?
+- Alguma variável não inicializada?
+- Algum overflow?
+- Confundindo N e M, i e j, etc.?
+- Você tem certeza de que seu algoritmo funciona?
+- Quais casos especiais você não considerou?
+- Você tem certeza de que as funções da STL que você usa funcionam como você pensa?
+- Adicione algumas asserções (asserts), talvez reenvie.
+- Crie alguns casos de teste para executar seu algoritmo.
+- Execute o algoritmo para um caso simples.
+- Percorra esta lista novamente.
+- Explique seu algoritmo para um colega de equipe.
+- Peça ao colega para olhar seu código.
+- Dê uma pequena caminhada, por exemplo, até o banheiro.
+- Seu formato de saída está correto? (incluindo espaços em branco)
+- Reescreva sua solução do zero ou peça para um colega fazer isso.
+
+### Erro em tempo de execução:
+- Você testou todos os casos extremos localmente?
+- Alguma variável não inicializada?
+- Você está lendo ou escrevendo fora do intervalo de algum vetor?
+- Alguma asserção que possa falhar?
+- Alguma possível divisão por 0? (por exemplo, módulo 0)
+- Alguma recursão infinita possível?
+- Ponteiros ou iteradores invalidados?
+- Você está usando memória excessiva?
+- Depure com reenvios (ex.: sinais remapeados, veja "Various").
+
+### Limite de tempo excedido:
+- Você tem algum loop infinito possível?
+- Qual é a complexidade do seu algoritmo?
+- Você está copiando muitos dados desnecessários? (use referências)
+- Qual é o tamanho da entrada e da saída? (considere usar scanf)
+- Evite vector, map. (use arrays/unordered_map)
+- O que seus colegas acham do seu algoritmo?
+
+### Limite de memória excedido:
+- Qual é a quantidade máxima de memória que seu algoritmo deve precisar?
+- Você está limpando todas as estruturas de dados entre os casos de teste?
