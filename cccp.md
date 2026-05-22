@@ -17,7 +17,7 @@ https://github.com/deniscostadsc/cccp/.
 Digitar o seguinte comando no terminal (Linux):
 
 ```shell
-mkdir -p \
+$ mkdir -p \
     maratona/templates \
     maratona/problemas/{A..K}/ \
     maratona/aquecimento
@@ -26,6 +26,7 @@ mkdir -p \
 Após esse comado, você terá a seguinte estrutura de pastas no seu computador:
 
 ```
+$ tree maratona/
 maratona/
     aquecimento/
     problemas/
@@ -62,25 +63,26 @@ maratona/
             a.cpp
             entrada.txt
             saida.txt
+...
 ```
 
 e execute da seguinte forma para C++:
 
 ```shell
-g++ -std=c++20 -O2 -lm a.cpp
-./a.o < entrada.txt > resultado.txt
+$ g++ -std=c++20 -O2 -lm a.cpp
+$ ./a.o < entrada.txt > resultado.txt
 ```
 
 E para Python:
 
 ```shell
-python a.py < entrada.txt > resultado.txt
+$ python a.py < entrada.txt > resultado.txt
 ```
 
 Para identificar possível diferenças no resultado use a ferramenta `diff`:
 
 ```shell
-diff resultado.txt saída.txt
+$ diff resultado.txt saída.txt
 ```
 
 ## Templates
@@ -88,10 +90,12 @@ diff resultado.txt saída.txt
 ### Template C++
 
 ```cpp
-#include <iostream>
-#include <cstdint>
+#include <cstdint>  // tipos numéricos (int16_t, int32_t, etc..)
+#include <iomanip>  // set precision
+#include <iostream>  // std::cin, std::cout
 
 int main() {
+    // nao misturar cin com scanf
     std::ios_base::sync_with_stdio(false);
     std::cin.tie(0);
 
@@ -130,7 +134,7 @@ int main(){
     int8_t i8;
     int16_t i16;
     int32_t i32;
-    int64_t i66
+    int64_t i64
 
     //inteiros sem sinal
     uint8_t ui8;
@@ -256,7 +260,7 @@ int main() {
 
     int16_t a, b;
 
-    while (std::cin >> a + b && a != 0 && b != 0) {
+    while (std::cin >> a >> b && a != 0 && b != 0) {
 
     }
 
@@ -287,7 +291,8 @@ std::cout <<
 
 #### Python
 ```python
-print(f'{a.2f}'). # imprime duas casas decimais
+pi = 3.1514
+output(f'{pi:.2f}\n')
 ```
 
 ## Complexidade de espaço e tempo
@@ -314,7 +319,7 @@ print(f'{a.2f}'). # imprime duas casas decimais
 ##### C++
 
 ```c++
-std::int16_t mmc(std::int16_t a, std::int16_t b) {
+std::int16_t mdc(std::int16_t a, std::int16_t b) {
     std::int16_t x;
 
     while (b > 0) {
