@@ -397,6 +397,12 @@ def is_prime(n):
 
     return True
 ```
+#### Soma intervalo [n,m]
+
+##### Python
+```python
+(m - n + 1) * (n + m) // 2
+```
 
 ## Roteiro de depuração
 
